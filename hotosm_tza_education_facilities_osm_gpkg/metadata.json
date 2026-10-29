@@ -1,0 +1,459 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json"
+  ],
+  "id": "hotosm_tza_education_facilities-osm",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          29.6051926,
+          -11.647982
+        ],
+        [
+          40.345027,
+          -11.647982
+        ],
+        [
+          40.345027,
+          -1.0000737
+        ],
+        [
+          29.6051926,
+          -1.0000737
+        ],
+        [
+          29.6051926,
+          -11.647982
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    29.6051926,
+    -11.647982,
+    40.345027,
+    -1.0000737
+  ],
+  "properties": {
+    "oex:category": "education_facilities",
+    "oex:source": "osm",
+    "oex:dataset_source": "OpenStreetMap (Geofabrik TZA 2026-10-07)",
+    "oex:snapshot": "2026-10-07",
+    "oex:boundary": "geoBoundaries gbOpen ADM0",
+    "oex:version": "0.4.15",
+    "oex:pcode_source_date": "2025-07-29",
+    "oex:geometry_types": {
+      "POLYGON": 81713,
+      "POINT": 21651,
+      "MULTIPOLYGON": 6
+    },
+    "title": "Education Facilities of Tanzania",
+    "description": "103,370 features: 81,713 polygons, 21,651 points, 6 multipolygons. 3 of 11 attributes are filled for at least half of the features.",
+    "license": "ODbL-1.0",
+    "created": "2026-10-08T08:28:47Z",
+    "keywords": [
+      "education facilities-schools",
+      "geodata"
+    ],
+    "providers": [
+      {
+        "name": "OpenStreetMap (Geofabrik TZA 2026-10-07)",
+        "roles": [
+          "producer",
+          "licensor"
+        ]
+      }
+    ],
+    "proj:code": "EPSG:4326",
+    "table:row_count": 103370,
+    "table:primary_geometry": "geom",
+    "table:columns": [
+      {
+        "name": "id",
+        "type": "VARCHAR",
+        "oex:null_count": 0,
+        "oex:null_percent": 0.0,
+        "oex:distinct_count": 98514,
+        "oex:top_values": []
+      },
+      {
+        "name": "name",
+        "type": "VARCHAR",
+        "oex:null_count": 77521,
+        "oex:null_percent": 74.99,
+        "oex:distinct_count": 20054,
+        "oex:top_values": []
+      },
+      {
+        "name": "name_en",
+        "type": "VARCHAR",
+        "oex:null_count": 84643,
+        "oex:null_percent": 81.88,
+        "oex:distinct_count": 14293,
+        "oex:top_values": []
+      },
+      {
+        "name": "name_sw",
+        "type": "VARCHAR",
+        "oex:null_count": 84675,
+        "oex:null_percent": 81.91,
+        "oex:distinct_count": 14060,
+        "oex:top_values": []
+      },
+      {
+        "name": "amenity",
+        "type": "VARCHAR",
+        "oex:null_count": 77427,
+        "oex:null_percent": 74.9,
+        "oex:distinct_count": 15,
+        "oex:top_values": [
+          {
+            "value": "school",
+            "count": 24483
+          },
+          {
+            "value": "kindergarten",
+            "count": 863
+          },
+          {
+            "value": "college",
+            "count": 467
+          },
+          {
+            "value": "university",
+            "count": 93
+          },
+          {
+            "value": "toilets",
+            "count": 20
+          }
+        ]
+      },
+      {
+        "name": "building",
+        "type": "VARCHAR",
+        "oex:null_count": 24626,
+        "oex:null_percent": 23.82,
+        "oex:distinct_count": 17,
+        "oex:top_values": [
+          {
+            "value": "school",
+            "count": 77898
+          },
+          {
+            "value": "university",
+            "count": 271
+          },
+          {
+            "value": "yes",
+            "count": 241
+          },
+          {
+            "value": "college",
+            "count": 213
+          },
+          {
+            "value": "kindergarten",
+            "count": 28
+          }
+        ]
+      },
+      {
+        "name": "operator_type",
+        "type": "VARCHAR",
+        "oex:null_count": 43223,
+        "oex:null_percent": 41.81,
+        "oex:distinct_count": 18,
+        "oex:top_values": [
+          {
+            "value": "government",
+            "count": 57213
+          },
+          {
+            "value": "public",
+            "count": 2220
+          },
+          {
+            "value": "private",
+            "count": 437
+          },
+          {
+            "value": "community",
+            "count": 160
+          },
+          {
+            "value": "religious",
+            "count": 64
+          }
+        ]
+      },
+      {
+        "name": "capacity_persons",
+        "type": "VARCHAR",
+        "oex:null_count": 103363,
+        "oex:null_percent": 99.99,
+        "oex:distinct_count": 3,
+        "oex:top_values": [
+          {
+            "value": "50to100",
+            "count": 3
+          },
+          {
+            "value": "20to49",
+            "count": 2
+          },
+          {
+            "value": "200-300",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "name": "addr_full",
+        "type": "VARCHAR",
+        "oex:null_count": 103370,
+        "oex:null_percent": 100.0,
+        "oex:distinct_count": 0,
+        "oex:top_values": []
+      },
+      {
+        "name": "addr_city",
+        "type": "VARCHAR",
+        "oex:null_count": 10413,
+        "oex:null_percent": 10.07,
+        "oex:distinct_count": 102,
+        "oex:top_values": [
+          {
+            "value": "Tanga",
+            "count": 5189
+          },
+          {
+            "value": "Kagera",
+            "count": 5156
+          },
+          {
+            "value": "Mwanza",
+            "count": 5044
+          },
+          {
+            "value": "Kilimanjaro",
+            "count": 4927
+          },
+          {
+            "value": "Dodoma",
+            "count": 4496
+          }
+        ]
+      },
+      {
+        "name": "source",
+        "type": "VARCHAR",
+        "oex:null_count": 103370,
+        "oex:null_percent": 100.0,
+        "oex:distinct_count": 0,
+        "oex:top_values": []
+      },
+      {
+        "name": "adm0_pcode",
+        "type": "VARCHAR",
+        "oex:null_count": 0,
+        "oex:null_percent": 0.0,
+        "oex:distinct_count": 1,
+        "oex:top_values": [
+          {
+            "value": "TZA",
+            "count": 103370
+          }
+        ]
+      },
+      {
+        "name": "adm0_name",
+        "type": "VARCHAR",
+        "oex:null_count": 0,
+        "oex:null_percent": 0.0,
+        "oex:distinct_count": 1,
+        "oex:top_values": [
+          {
+            "value": "United Republic of Tanzania",
+            "count": 103370
+          }
+        ]
+      },
+      {
+        "name": "adm1_pcode",
+        "type": "VARCHAR",
+        "oex:null_count": 0,
+        "oex:null_percent": 0.0,
+        "oex:distinct_count": 31,
+        "oex:top_values": [
+          {
+            "value": "TZ07",
+            "count": 6720
+          },
+          {
+            "value": "TZ18",
+            "count": 6250
+          },
+          {
+            "value": "TZ04",
+            "count": 5566
+          },
+          {
+            "value": "TZ01",
+            "count": 5492
+          },
+          {
+            "value": "TZ19",
+            "count": 5484
+          }
+        ]
+      },
+      {
+        "name": "adm1_name",
+        "type": "VARCHAR",
+        "oex:null_count": 0,
+        "oex:null_percent": 0.0,
+        "oex:distinct_count": 31,
+        "oex:top_values": [
+          {
+            "value": "Dar-es-salaam",
+            "count": 6720
+          },
+          {
+            "value": "Kagera",
+            "count": 6250
+          },
+          {
+            "value": "Tanga",
+            "count": 5566
+          },
+          {
+            "value": "Dodoma",
+            "count": 5492
+          },
+          {
+            "value": "Mwanza",
+            "count": 5484
+          }
+        ]
+      },
+      {
+        "name": "adm2_pcode",
+        "type": "VARCHAR",
+        "oex:null_count": 0,
+        "oex:null_percent": 0.0,
+        "oex:distinct_count": 170,
+        "oex:top_values": [
+          {
+            "value": "TZ0701",
+            "count": 2794
+          },
+          {
+            "value": "TZ0702",
+            "count": 2502
+          },
+          {
+            "value": "TZ1003",
+            "count": 1964
+          },
+          {
+            "value": "TZ0401",
+            "count": 1615
+          },
+          {
+            "value": "TZ2501",
+            "count": 1572
+          }
+        ]
+      },
+      {
+        "name": "adm2_name",
+        "type": "VARCHAR",
+        "oex:null_count": 0,
+        "oex:null_percent": 0.0,
+        "oex:distinct_count": 170,
+        "oex:top_values": [
+          {
+            "value": "Kinondoni",
+            "count": 2794
+          },
+          {
+            "value": "Ilala",
+            "count": 2502
+          },
+          {
+            "value": "Mbinga",
+            "count": 1964
+          },
+          {
+            "value": "Lushoto",
+            "count": 1615
+          },
+          {
+            "value": "Geita",
+            "count": 1572
+          }
+        ]
+      },
+      {
+        "name": "adm3_pcode",
+        "type": "VARCHAR",
+        "oex:null_count": 0,
+        "oex:null_percent": 0.0,
+        "oex:distinct_count": 3204,
+        "oex:top_values": []
+      },
+      {
+        "name": "adm3_name",
+        "type": "VARCHAR",
+        "oex:null_count": 0,
+        "oex:null_percent": 0.0,
+        "oex:distinct_count": 3024,
+        "oex:top_values": []
+      },
+      {
+        "name": "adm4_pcode",
+        "type": "VARCHAR",
+        "oex:null_count": 103370,
+        "oex:null_percent": 100.0,
+        "oex:distinct_count": 0,
+        "oex:top_values": []
+      },
+      {
+        "name": "adm4_name",
+        "type": "VARCHAR",
+        "oex:null_count": 103370,
+        "oex:null_percent": 100.0,
+        "oex:distinct_count": 0,
+        "oex:top_values": []
+      },
+      {
+        "name": "name_latin",
+        "type": "VARCHAR",
+        "oex:null_count": 77017,
+        "oex:null_percent": 74.51,
+        "oex:distinct_count": 19572,
+        "oex:top_values": []
+      }
+    ],
+    "datetime": "2026-10-07T00:00:00Z"
+  },
+  "links": [
+    {
+      "rel": "license",
+      "href": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "title": "Open Database License (ODC-ODbL)"
+    },
+    {
+      "rel": "root",
+      "href": "https://production-raw-data-api.s3.amazonaws.com/ISO3/catalog.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {}
+}
