@@ -1,0 +1,276 @@
+
+DRDEMIC-TRACKER
+A flask application that helps me in school acquisition process for drdemic
+
+
+
+
+
+
+Claude references the same knowledge every time you talk to it in this project.
+
+Instructions
+Add instructions to tailor Claude’s responses
+
+Memory
+Only you
+Project memory will show here after a few chats.
+
+Context
+1% of project capacity used
+
+REQUIREMENTS
+10.6kB
+
+text
+
+
+
+REQUIREMENTS
+# DRDEMIC TRACKER
+ 
+## System Requirements Specification
+ 
+### 1. System Overview
+ 
+DrDemic Tracker is a web-based school acquisition and field management application designed to help manage the process of introducing the DrDemic school management system to schools across Tanzania.
+ 
+The system will combine geographic school data, GPS-based field tracking, school contact management, visit history, and follow-up scheduling in a centralized application.
+ 
+Its primary purpose is to help the operator determine which schools to visit, record what happens during each visit, and manage the steps required to convert prospective schools into DrDemic customers.
+ 
+### 2. School Database and Management
+ 
+The system shall:
+ 
+1. Maintain a database of schools that can be targeted for DrDemic onboarding.
+2. Store each school's name, geographic location, approximate student population, and other relevant information.
+3. Assign each operational school record a unique identifier.
+4. Record whether a school has been visited and its current acquisition status.
+5. Allow school information to be reviewed and updated as new information becomes available.
+6. Support incomplete records without requiring unknown information to be invented.
+7. Preserve the original imported geographic dataset separately from operational acquisition records.
+8. Support the identification and review of possible duplicate schools without automatically merging uncertain matches.
+ 
+### 3. Geographic Map and Navigation
+ 
+The system shall provide an interactive map displaying schools geographically.
+ 
+The map shall:
+ 
+1. Display unvisited schools using red markers.
+2. Display visited schools using green markers.
+3. Display the user's current GPS position using a blue marker when location access is granted.
+4. Allow users to select a school marker to view its available information.
+5. Display relevant school details, including its name, location, ownership classification when known, and visit status.
+6. Allow the user to distinguish visited schools from schools that have not yet been visited.
+7. Support geographic navigation between schools and the user's current position.
+8. Handle missing or invalid school coordinates without crashing the application.
+9. Allow school coordinates to be corrected when their accuracy has been verified.
+ 
+The map shall use the Leaflet JavaScript library and suitable geographic data services.
+ 
+### 4. GPS-Based Visit Verification
+ 
+The system shall use the device's GPS location to help verify field visits.
+ 
+It shall:
+ 
+1. Obtain the user's current location through the browser's Geolocation API, subject to permission.
+2. Capture the coordinates reported when a visit is recorded.
+3. Capture the GPS accuracy reported by the device.
+4. Calculate the geographic distance between the reported position and the selected school's recorded location.
+5. Compare the calculated distance and GPS accuracy against configurable verification rules.
+6. Reject or flag visit attempts that do not satisfy those rules.
+7. Perform visit verification on the server rather than trusting a decision made exclusively in the browser.
+8. Clearly communicate when location permission is denied, GPS accuracy is inadequate, or the school coordinates may be incorrect.
+ 
+The initial proposed distance threshold is approximately 100 metres. This threshold should be configurable and tested in real field conditions.
+ 
+The system shall not treat GPS coordinates alone as absolute proof that a person physically visited a school.
+ 
+### 5. Visit Management
+ 
+The system shall maintain a historical record of visits to schools.
+ 
+For each visit, it shall support recording:
+ 
+* The school visited.
+* The date and time of the visit.
+* The visit outcome.
+* The next action required.
+* Whether a demonstration of DrDemic was conducted.
+* Problems or needs identified at the school.
+* The main objection or concern raised.
+* Documents requested by the school.
+* Additional notes.
+* The GPS coordinates recorded during the visit.
+* The reported GPS accuracy.
+* The next planned in-person visit date, where applicable.
+ 
+The system shall:
+ 
+1. Associate every visit with the relevant school.
+2. Allow multiple visits to the same school.
+3. Preserve previous visit records when a new visit is recorded.
+4. Display the school's visit history.
+5. Distinguish a school's overall acquisition status from the outcome of an individual visit.
+6. Record visit verification results where applicable.
+ 
+### 6. School Contact Management
+ 
+The system shall maintain contact information for people associated with each school.
+ 
+For each contact, it shall support:
+ 
+* Full name.
+* Position or role at the school.
+* Phone number.
+* Association with the relevant school.
+ 
+The system shall allow a school to have multiple contacts.
+ 
+Contact information shall be editable when a person's role or contact details change.
+ 
+### 7. Follow-Up and Reminder Management
+ 
+The system shall support follow-up tasks arising from school visits and other acquisition activities.
+ 
+Each follow-up shall support:
+ 
+* A description of the required task.
+* The associated school.
+* An optional link to the visit that generated the task.
+* A due date.
+* A task status.
+* A completion timestamp.
+* Additional notes.
+ 
+The system shall:
+ 
+1. Allow follow-up tasks to be created for schools.
+2. Allow tasks to be marked as completed.
+3. Display pending and overdue tasks.
+4. Allow tasks to be reviewed in relation to their associated schools.
+5. Preserve completed task records for historical reference.
+ 
+Automated notifications and calendar integrations may be added in a later development phase.
+ 
+### 8. Acquisition Pipeline
+ 
+The system shall track the progress of each school through the DrDemic acquisition process.
+ 
+A proposed acquisition pipeline includes:
+ 
+1. Identified.
+2. Not yet visited.
+3. Contact established.
+4. Initial visit completed.
+5. Demonstration completed.
+6. Follow-up required.
+7. Considering adoption.
+8. Onboarding in progress.
+9. Successfully onboarded.
+10. Not proceeding.
+ 
+The final status categories should be configurable or refined to match the actual sales and onboarding process.
+ 
+The system shall maintain the school's overall status independently of individual visit outcomes.
+ 
+### 9. Data Integrity and Relationships
+ 
+The system shall maintain consistent relationships between its records.
+ 
+It shall:
+ 
+1. Assign unique primary keys to operational records.
+2. Associate visits, contacts, and follow-up tasks with the correct school.
+3. Prevent orphaned records through appropriate database constraints.
+4. Validate required fields and data types.
+5. Distinguish unknown values from known zero values.
+6. Preserve visit history rather than overwriting previous visits.
+7. Avoid silently merging schools based only on similar names.
+8. Support appropriate database transactions to prevent incomplete or inconsistent updates.
+ 
+### 10. User Interface
+ 
+The application shall provide an interface suitable for field use.
+ 
+It shall:
+ 
+1. Present the interactive map as a primary way of discovering and selecting schools.
+2. Allow school details and visit history to be accessed from the selected school.
+3. Provide forms for recording visits, contacts, and follow-up tasks.
+4. Display validation errors clearly.
+5. Provide feedback when records are saved or an operation fails.
+6. Support practical use on both desktop and mobile browsers.
+7. Provide a clear indication of GPS status and visit-verification results.
+ 
+### 11. Technical Requirements
+ 
+The proposed technology stack is:
+ 
+* **Backend:** Python and Flask.
+* **Database:** PostgreSQL.
+* **Geospatial database functionality:** PostGIS.
+* **Database ORM:** SQLAlchemy with Flask-SQLAlchemy.
+* **Spatial ORM support:** GeoAlchemy2.
+* **Database driver:** Psycopg.
+* **Frontend:** HTML, CSS, and JavaScript.
+* **Interactive mapping:** Leaflet.js.
+* **Location services:** Browser Geolocation API.
+ 
+The system shall separate application logic, database models, HTTP routes, templates, and static frontend assets into maintainable components.
+ 
+Database schema changes shall be managed through a migration system as development progresses.
+ 
+### 12. Source Data Management
+ 
+The system shall support importing school and education-facility data from external geographic datasets.
+ 
+It shall:
+ 
+1. Preserve the original source records and their identifiers.
+2. Retain useful source attributes and geographic information.
+3. Distinguish source records from operational school records.
+4. Allow imported records to be reviewed before being used for acquisition activities.
+5. Preserve unknown ownership classifications as unknown.
+6. Account for unnamed records and facilities that may not be schools.
+7. Maintain appropriate attribution and comply with the source dataset's licensing conditions.
+ 
+### 13. Security and Privacy
+ 
+The system shall:
+ 
+1. Restrict access to authorized users.
+2. Protect database credentials and application secrets.
+3. Validate and authorize requests on the server.
+4. Avoid exposing sensitive contact information unnecessarily.
+5. Request browser location permission before accessing GPS coordinates.
+6. Avoid retaining location data beyond what is reasonably necessary for the application's field-verification and auditing purposes.
+7. Protect against unauthorized changes to school, visit, contact, and follow-up records.
+8. Validate all user-supplied data before storing it.
+ 
+### 14. Initial Development Priorities
+ 
+The initial release should prioritize:
+ 
+1. Establishing the PostgreSQL and PostGIS database.
+2. Creating the school, visit, contact, and follow-up models.
+3. Establishing database relationships and constraints.
+4. Loading and reviewing imported school data.
+5. Displaying eligible schools on the interactive map.
+6. Displaying school details when a marker is selected.
+7. Implementing GPS-based visit verification.
+8. Recording and viewing visit history.
+9. Managing contacts and follow-up tasks.
+10. Tracking acquisition status.
+ 
+Additional capabilities, such as automated reminders, reporting dashboards, advanced filtering, and multi-user administration, can be developed after the core workflow is reliable.
+ 
+### 15. Expected Outcome
+ 
+DrDemic Tracker should provide a reliable way to move from a geographic list of potential schools to a structured acquisition workflow.
+ 
+The user should be able to identify a school, navigate to it, record a verified or appropriately flagged visit, maintain its contact information, document the outcome, schedule the next action, and track its progress toward adopting DrDemic.
+ 
