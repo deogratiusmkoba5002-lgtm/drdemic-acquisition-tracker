@@ -1,3 +1,7 @@
 Flask
 psycopg[binary]
 python-dotenv
+Flask-SQLAlchemy
+GeoAlchemy2
+Flask-Migrate
+SQLAlchemy

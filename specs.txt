@@ -274,3 +274,29 @@ DrDemic Tracker should provide a reliable way to move from a geographic list of 
  
 The user should be able to identify a school, navigate to it, record a verified or appropriately flagged visit, maintain its contact information, document the outcome, schedule the next action, and track its progress toward adopting DrDemic.
  
+### 10A. Application Pages
+
+The application shall provide five pages with shared navigation:
+
+1. Dashboard: lists schools that have been visited, shows upcoming follow-up
+   actions as cards (school name, next action, due date), provides a link to
+   the map and an [+Add] control that opens a form to record a school visit.
+2. Map: interactive Leaflet map (see section 3).
+3. In Progress: schools with at least one visit that are neither onboarded
+   nor not proceeding.
+4. Customers: schools with status "onboarded".
+5. Lost: schools with status "not proceeding".
+
+The [+Add] form shall allow selecting an existing school or creating a new
+one, and shall record visit date, status, next action and its date, approximate
+student size, contact name, role and phone number, whether a demonstration was
+done, the school's current system, problems identified, main objection,
+requested documents and notes. Saving shall create the school (if new),
+contact, visit and follow-up in a single database transaction, and the visit
+shall be subject to server-side GPS verification (section 4).
+
+Visit detail pages shall offer [Successful customer] and [Failed customer]
+actions, setting the school's status to "onboarded" or "not proceeding".
+
+The school record shall store the school's current system (the software or
+process it uses before DrDemic), as a school attribute rather than a visit one.

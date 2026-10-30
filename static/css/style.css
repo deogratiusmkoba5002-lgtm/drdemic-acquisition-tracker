@@ -1,0 +1,24 @@
+:root {
+  --primary: #12916b;
+  --on-primary: #ffffff; /* Essential for text/icon readability on the nav background */
+  --text-muted: #b3dfd2; /* A soft, low-contrast mint for hover states or secondary nav items */
+}
+
+nav {
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+nav ul {
+  display: flex;
+  list-style: None;
+  gap: 20px;
+  margin: 0;
+  padding: 30px;
+  font-size: 20px;
+}
+
+nav li {
+  background-color: var(--text-muted);
+  padding: 5px;
+  border-radius: 5px;
+}

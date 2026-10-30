@@ -1,0 +1,16 @@
+   {% extends "base.html" %}
+   {% block head %}
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+   <style>
+    #map {height: 500px;}
+   </style>
+   {% endblock %}
+   {% block title %}drdemic schools map{% endblock %}
+   {% block content %}
+     <h1>MAP FOR SCHOOLS</h1>
+     <div id="map"></div>
+   {% endblock %}
+   {% block scripts %}
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+   <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+   {% endblock %}
