@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% block head %}{%  endblock %}
   <title>{% block title %}DrDemic Tracker{% endblock %}</title>
-  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
   <nav>
     <ul>
       <li><a href="{{ url_for('pages.render_dashboard') }}">Dashboard</a></li>
-      <li><a href="{{ url_for('pages.render_map_page') }}">Map</a></li>
+      <!--<li><a href="{{ url_for('pages.render_map_page') }}">Map</a></li> -->
       <li><a href="{{ url_for('pages.render_in_progress_page') }}">In Progress</a></li>
       <li><a href="{{ url_for('pages.render_customers_page') }}">Customers</a></li>
       <li><a href="{{ url_for('pages.render_lost_page') }}">Failed to Acquire</a></li>

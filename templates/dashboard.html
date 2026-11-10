@@ -2,4 +2,16 @@
    {% block title %}Dashboard{% endblock %}
    {% block content %}
      <h1>DASHBOARD</h1>
+     <div id="dash-items">
+      <div class="map-icon dash-item">
+        <a href="{{ url_for('pages.render_map_page') }}" class="dash-map-btn btn">MAP</a>
+      </div>
+      <div class="sch-visits-block dash-item">
+        <h3>SCHOOLS VISITED</h3>
+        <div class="number-sch">982</div>
+      </div>
+      <div class="add-sch dash-item">
+        <a href="{{ url_for('pages.render_visit_form_page') }}" class="add-sch-btn btn">+ADD SCHOOL VISITED</a>
+      </div>
+     </div>
    {% endblock %}

@@ -1,12 +1,33 @@
 :root {
-  --primary: #12916b;
-  --on-primary: #ffffff; /* Essential for text/icon readability on the nav background */
-  --text-muted: #b3dfd2; /* A soft, low-contrast mint for hover states or secondary nav items */
+    /* Primary colours */
+    --primary: #39FF14;
+    --secondary: #00E676;
+
+    /* Backgrounds */
+    --background: #151A18;
+    --dash: #1C2420;
+    --card: #222A26;
+    --surface: #303A34;
+
+    /* Text */
+    --on-primary: #101510;
+    --text-main: #E8F5E9;
+    --text-muted: #A5B5AA;
+
+    /* Accents */
+    --accent: #00E5FF;
+    --warning: #FFC857;
+    --danger: #FF5252;
+
+    /* Effects */
+    --glow: 0 0 12px rgba(57, 255, 20, 0.35);
 }
 
+body {
+  background: var(--primary);
+}
 nav {
-  background-color: var(--primary);
-  color: var(--on-primary);
+  background: var(--dash);
 }
 nav ul {
   display: flex;
@@ -21,4 +42,66 @@ nav li {
   background-color: var(--text-muted);
   padding: 5px;
   border-radius: 5px;
+  color: var(--on-primary);
 }
+
+#dash-items {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  height: 200px;
+  background: var(--dash);
+}
+
+#dash-items > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dash-item {
+  background: linear-gradient(to right, var(--dash), #07332a);
+}
+
+.map-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn {
+  align-items: center;
+  background: var(--primary);
+  color: var(--on-primary);
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--secondary);
+  box-shadow: var(--glow);
+}
+.sch-visits-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sch-visits-block h3 {
+  text-align: center;
+  background: var(--card);
+  color: var(--text-main);
+  border: 1px solid var(--surface);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--glow);
+}
+.number-sch {
+  text-align: center;
+}
+
+.add-sch {
+  align-items: center;
+}
+

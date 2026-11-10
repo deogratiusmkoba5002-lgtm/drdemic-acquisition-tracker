@@ -16,6 +16,8 @@ def create_app():
 
   app.config["SQLALCHEMY_DATABASE_URI"] = os.environ["DATABASE_URL"]
   app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
+  app.config["VISIT_MAX_DISTANCE_M"] = 100
+  app.config["VISIT_MAX_GPS_ACCURACY_M"] = 50
 
   db.init_app(app)
   migrate.init_app(app, db)

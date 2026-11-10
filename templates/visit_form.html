@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block title %} visit form {% endblock %}
+{% block content %}
+
+  <form id="visit-form" novalidate>
+    <fieldset id="school-fs">
+      <legend id="school-lg">School Information</legend>
+      <div class="form-group">
+        <label for="school-name">Enter School Name</label>
+        <input type="text" id="school-name" name="school_name">
+      </div>
+      <div class="form-group">
+        <label for="location-name">Where is that School at!🧐</label>
+        <input type="text" id="location-name" name="location-name">
+      </div>
+      <div class="form-group">
+        <label for="approx-size">Approximate Student Size</label>
+        <input type="number" id="approx-size" name="approx_student_size">
+      </div>
+      <div class="form-group">
+        <label for="status">Current Acquisition Status</label>
+        <input type="text" id="status" name="status">
+      </div>
+    </fieldset>
+    <fieldset id="visit-fs">
+      <legend id="visit-lg">Visit Information</legend>
+      <div class="form-group">
+        <label for="date-visited">When did you visit?</label>
+        <input type="datetime-local" id="date-visited" name="date-visited">
+      </div>
+      <div class="form-group">
+        <label for="visit-outcome">What happened when you visited bro!</label>
+        <input type="text" id="visit-outcome" name="visit_outcome">
+      </div>
+      <div class="form-group">
+        <label for="demo-done">Did we convince them with a demo? 👀</label>
+        <input type="checkbox" id="demo-done" name="demo_done" value="true">
+      </div>
+      <button type="button">Mark Current Location Coordinates In Map</button>
+    </fieldset>
+    <fieldset id="contact-fs">
+      <legend id="contact-lg">Contacts</legend>
+      <div class="form-group">
+        <label for="phone-number">Phone Number</label>
+        <input type="tel" id="phone-number" name="phone_number">
+      </div>
+      <div class="form-group">
+        <label for="position">Position</label>
+        <input type="text" id="position" name="contact_position">
+      </div>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="contact_name">
+      </div>
+    </fieldset>
+    <fieldset id="next-act-fs">
+      <legend id="next-act-lg">Next Action</legend>
+      <div class="form-group">
+        <label for="next-action">Next Action</label>
+        <input type="text" id="next-action" name="next_action">
+      </div>
+      <div class="form-group">
+        <label for="date-next-action">Date of Next Action</label>
+        <input type="date" id="date-next-action" name="next_action_date">
+      </div>
+      <div class="form-group">
+        <label for="time-next-action">Time of Next Action</label>
+        <input type="time" id="time-next-action" name="time-next-action">
+      </div>
+    </fieldset>
+    <details>
+      <summary>Others→</summary>
+      <fieldset id="others-fs">
+      <legend id="others-lg">Others</legend>
+      <div class="form-group">
+        <label for="current-system">Current School System</label>
+        <input type="text" id="current-system" name="current_system">
+      </div>
+      <div class="form-group">
+        <label for="problems">Problems Identified</label>
+        <textarea id="problems" name="problem_identified"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="main-obj">Main Objection</label>
+        <textarea id="main-obj" name="main_objection"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="req-docs">Requested Documents</label>
+        <textarea id="req-docs" name="requested_documents"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="notes">Any notes that you wanna take?</label>
+        <textarea id="notes" name="notes"></textarea>
+      </div>
+    </fieldset>
+    </details>
+    
+  </form>
+
+  
+
+{% endblock %}
+{% block scripts %}{% endblock %}
+
+
+
+<!-- templates/visit_form.html -->
+<!-- STEP 1: extends base.html, title block, content block, scripts block -->
+<!-- STEP 2: <form id="visit-form" novalidate> -->
+<!--   a. fieldset: school (radio: existing / new) + the two groups of inputs -->
+<!--   b. fieldset: visit (date, status select built with a Jinja for-loop -->
+<!--      over `statuses`, demo checkbox, textareas) -->
+<!--   c. fieldset: contact -->
+<!--   d. fieldset: next action + date -->
+<!--   e. <p id="gps-status">, hidden inputs for lat/lng/accuracy -->
+<!--   f. <div id="form-errors"></div> and the submit button (disabled) -->
+<!-- STEP 3: scripts block loads static/js/visit_form.js via url_for -->
+

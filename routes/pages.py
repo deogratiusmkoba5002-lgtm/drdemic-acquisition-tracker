@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from statuses import STATUSES
 
 bp = Blueprint("pages", __name__)
 
@@ -22,19 +23,12 @@ def render_customers_page():
 def render_lost_page():
   return render_template("lost.html")
 
+@bp.route("/visits/new")
+def render_visit_form_page():
+#  return render_template("visit_form.html", statuses=STATUSES)
+   return render_template("visit_form.html", statuses=STATUSES)
 
 # routes/pages.py
-
-# STEP 1: import Blueprint and render_template from flask
-
-# STEP 2: bp = Blueprint("pages", __name__)   (no url_prefix, these are real pages)
-
-# STEP 3: one function per page, each returning render_template("<file>.html")
-#   "/"             -> function dashboard()    -> dashboard.html
-#   "/map"          -> function map_page()     -> map.html
-#   "/in-progress"  -> function in_progress()  -> in_progress.html
-#   "/customers"    -> function customers()    -> customers.html
-#   "/lost"         -> function lost()         -> lost.html
-#   (the function names matter: url_for("pages.dashboard") uses them)
-
-# STEP 4: register this blueprint in create_app(), like schools_bp
+# STEP 1: add a route "/visits/new" -> function render_visit_form_page()
+# STEP 2: import STATUSES from statuses.py and pass it:
+#         render_template("visit_form.html", statuses=STATUSES)
